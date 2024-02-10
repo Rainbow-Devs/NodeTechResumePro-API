@@ -5,6 +5,7 @@ import { UsersService } from './users.service';
 import { AuthGuard } from '@nestjs/passport';
 import { Serialize } from 'src/interceptors/serializeInterceptor';
 import { UserDto } from './dto/user.dto';
+import { GetUserDto } from './dto/get-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -18,8 +19,8 @@ export class UsersController {
   @Get('user')
   @UseGuards(AuthGuard('jwt'))
   @Serialize(UserDto)
-  async getUser(@Body() createUserDto: CreateUserDto) {
-    const { username } = createUserDto;
+  async getUser(@Body() getUserDto: GetUserDto) {
+    const { username } = getUserDto;
     return this.usersService.findOne(username);
   }
 }
