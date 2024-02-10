@@ -6,9 +6,10 @@ import { AuthGuard } from '@nestjs/passport';
 import { Serialize } from 'src/interceptors/serializeInterceptor';
 import { UserDto } from './dto/user.dto';
 import { GetUserDto } from './dto/get-user.dto';
-import { ApiBody, ApiResponse } from '@nestjs/swagger';
+import { ApiBody, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller('users')
+@ApiTags('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
