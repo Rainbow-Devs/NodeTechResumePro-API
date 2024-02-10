@@ -1,73 +1,76 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS Project with MongoDB
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This project is built using [NestJS](https://nestjs.com/), a progressive Node.js framework for building efficient and scalable server-side applications. It uses MongoDB as the database, with MongoDB Compass as the GUI for database management.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Getting Started
 
-## Description
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Prerequisites
 
-## Installation
+Before you begin, ensure you have the following installed on your system:
 
-```bash
-$ pnpm install
-```
+- Node.js (LTS version)
+- npm (Node Package Manager), which comes with Node.js
+- MongoDB
+- MongoDB Compass (optional, for easier database management)
 
-## Running the app
+### Installing Node.js and npm
 
-```bash
-# development
-$ pnpm run start
+1. Download and install Node.js from the [official website](https://nodejs.org/).
+2. npm is included with Node.js installation. To verify their installation, run the following commands in your terminal:
 
-# watch mode
-$ pnpm run start:dev
+   ```bash
+   node --version
+   npm --version
+   ```
 
-# production mode
-$ pnpm run start:prod
-```
+### Setting Up MongoDB
 
-## Test
+1.  Install MongoDB: Follow the official MongoDB installation guide for your operating system.
+2.  Start MongoDB:
+    - On macOS/Linux: MongoDB is typically started as a background service. You can initiate it with the `mongod` command.
+    - On Windows: MongoDB installs as a service and should start automatically. If not, manually start it through the Services management console.
+3.  Verify MongoDB Installation: Open a terminal or command prompt and type `mongo` to connect to the database server using the MongoDB shell. If connected, MongoDB is running correctly.
 
-```bash
-# unit tests
-$ pnpm run test
+### Installing MongoDB Compass
 
-# e2e tests
-$ pnpm run test:e2e
+MongoDB Compass is the official GUI for MongoDB, facilitating database management tasks. Download and install Compass from the MongoDB Compass page.
 
-# test coverage
-$ pnpm run test:cov
-```
+### Setting Up the Project
 
-## Support
+Follow these steps to get your development environment running:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1.  Clone the Repository
 
-## Stay in touch
+    `git clone <repository-url>`
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+2.  Navigate to the Project Directory
 
-## License
+    `cd <project-directory-name>`
 
-Nest is [MIT licensed](LICENSE).
+3.  Install Dependencies
+
+    `npm install`
+
+4.  Environment Configuration
+
+    Create a `.env` file in the project root and specify your MongoDB URI and other configurations:
+
+    `MONGODB_URI=mongodb://localhost:27017/yourDatabaseName`
+    `PORT=8080`
+
+5.  Start the Application
+    `npm run start`
+
+    For development with hot reload:
+
+    `npm run start:dev`
+
+6.  Accessing the Application
+
+    The application will be available at `http://localhost:8080` or another port if you specified one differently in your `.env` file.
+
+## Using MongoDB Compass
+
+With MongoDB Compass installed, connect to your MongoDB database using the URI provided in your `.env` file. Compass offers a user-friendly interface to manage your databases, collections, and documents, and perform various database operations.
