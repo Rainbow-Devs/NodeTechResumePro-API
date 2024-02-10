@@ -1,5 +1,5 @@
 // src/auth/auth.controller.ts
-import { Controller, Request, Post } from '@nestjs/common';
+import { Controller, Request, Post, BadRequestException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 @Controller('auth')
@@ -8,6 +8,15 @@ export class AuthController {
 
   @Post('login')
   async login(@Request() req) {
-    return this.authService.login(req.user);
+    const user = await this.authService.validateUser(
+      req.body.username,
+      req.body.password,
+    );
+
+    if (!user) {
+      throw new BadRequestException('Invalid username or password');
+    } else {
+      return this.authService.login(user);
+    }
   }
 }
