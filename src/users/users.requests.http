@@ -7,3 +7,14 @@ content-type: application/json
     "password": "password",
     "email": "test@gmail.com"
 }
+
+### Get User
+GET http://localhost:8080/users/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImlhdCI6MTcwNzU4ODMwNSwiZXhwIjoxNzA3NjE3MTA1fQ.s5KPGjVsx03hHfPf-LbVb2mzpql-lmBS6JB9GtsycD4
+content-type: application/json
+
+{
+    "username": "testUser1",
+    "password": "password",
+    "email": "test@gmail.com"
+}
