@@ -11,12 +11,12 @@ export class UsersService {
   constructor(@InjectModel('User') private userModel: Model<User>) { }
 
   async create(createUserDto: CreateUserDto): Promise<User> {
-    const { username, password } = createUserDto;
+    const { password } = createUserDto;
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const newUser = new this.userModel({
-      username,
       password: hashedPassword,
+      ...createUserDto,
     });
 
     return newUser.save();
