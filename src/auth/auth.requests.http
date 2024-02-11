@@ -1,8 +1,8 @@
-### Create User 
+### Login
 POST http://localhost:8080/auth/login
 content-type: application/json
 
 {
-    "username": "testUser1",
+    "username": "testUser2",
     "password": "password"
 }

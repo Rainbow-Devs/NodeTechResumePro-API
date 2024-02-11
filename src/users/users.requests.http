@@ -3,9 +3,9 @@ POST http://localhost:8080/users/register
 content-type: application/json
 
 {
-    "username": "testUser1",
+    "username": "testUser2",
     "password": "password",
-    "email": "test@gmail.com"
+    "email": "test2@gmail.com"
 }
 
 ### Get User
@@ -14,7 +14,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc
 content-type: application/json
 
 {
-    "username": "testUser1",
+    "username": "testUser2",
     "password": "password",
     "email": "test@gmail.com"
 }
